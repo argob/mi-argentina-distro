@@ -8,7 +8,7 @@ Template.nav.events({
   }
 })
 
-Template.nav.helpers({
+Template.menuElement.helpers({
   current: function (section) {
     let currentPath = Router.current().url.replace(Meteor.settings.public.miargentina, '').split('/')
     if (currentPath[0] === '') {

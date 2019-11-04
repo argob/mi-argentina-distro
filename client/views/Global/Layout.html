@@ -69,16 +69,8 @@
               {{> nav}}
             </div>
             <main class="col-lg-12 col-sm-8" aria-live="assertive" id="mainContent" role="main">
-              {{> yield 'titleSection'}}
-              <div class="row main">
-                <div id="yieldContent" class="{{#if fullSizeTemplate}}col-md-12{{else}}col-lg-8 col-xs-12{{/if}} gral-container">
-                  {{> yield }}
-                </div>
-                <div class="col-lg-4 col-xs-12 m-y-1">
-                  <div class="main-panels panels-row-miargentina">
-                    {{> yield 'secondaryPanel'}}
-                  </div>
-                </div>
+              <div id="yieldContent" class="gral-container">
+                {{> yield }}
               </div>
             </main>
           </div>

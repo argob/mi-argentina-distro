@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor'
+import '/imports/client/router.js'
 
 Meteor.startup(function () {
-  console.log("Start");
 })

@@ -1,0 +1,23 @@
+<template name="titleSection">
+  {{#with settings}}
+    {{#if breadcrumb}}
+      <div aria-label="breadcrumb">
+        <ol class="breadcrumb p-l-0 p-y-0">
+          <li class="breadcrumb-item">
+            <a href="{{ getSetting 'miargentina'}}/inicio">Mi Argentina</a>
+          </li>
+          {{#each breadcrumb}}
+            <li class="breadcrumb-item {{#if last @index  ../breadcrumb/length}}active{{/if}}"  aria-current="{{#if last @index  ../breadcrumb/length}}page{{/if}}">
+              {{#unless last @index  ../breadcrumb/length}}<a href="{{ getSetting 'miargentina'}}/{{path}}">{{pathName}}</a>{{else}}{{pathName}}{{/unless}}
+            </li>
+          {{/each}}
+        </ol>
+      </div>
+    {{/if}}
+    <div class="m-y-1">
+      <h1 class="{{classTitle}}">{{title}}</h1>{{#if complementoTitle}}{{{complementoTitle}}}{{/if}}
+      {{#if bajada}}<p>{{bajada}}</p>{{/if}}
+    </div>
+    <hr class="m-y-1">
+  {{/with}}
+</template>

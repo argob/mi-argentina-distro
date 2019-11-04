@@ -2,6 +2,7 @@
   "public": {
     "id": "http://project-id.gob.ar",
     "miargentina": "http://project-mi-argentina.gob.ar",
+    "argentinagobar": "https://www.argentina.gob.ar"
   },
   "mailgun":{
     "key": "key",

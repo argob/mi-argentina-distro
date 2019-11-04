@@ -14,6 +14,9 @@ Template.registerHelper('getSetting', function (nombre) {
   if (nombre === 'miargentina') {
     return Meteor.settings.public.miargentina
   }
+  if (nombre === 'argentinagobar') {
+    return Meteor.settings.public.argentinagobar
+  }
 })
 
 Template.registerHelper('fechaActual', function () {
@@ -28,11 +31,19 @@ Template.registerHelper('loading', function (name) {
   return Session.get(name) === undefined
 })
 
+Template.registerHelper('FirstLogin', function () {
+  let userMetadata = Meteor.user() && Meteor.user().services && Meteor.user().services.metadata
+  return userMetadata && userMetadata.firstlogin === true
+})
+
 Template.registerHelper("isEqual", function (element1, element2) {
   return element1 === element2
 })
 
-Template.registerHelper('FirstLogin', function () {
-  let userMetadata = Meteor.user() && Meteor.user().services && Meteor.user().services.metadata
-  return userMetadata && userMetadata.firstlogin === true
+Template.registerHelper("first", function (index, length) {
+  return index === 0
+})
+
+Template.registerHelper("last", function (index, length) {
+  return index + 1 === length
 })

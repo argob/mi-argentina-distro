@@ -11,21 +11,20 @@ Meteor.methods({
     let user = Meteor.user()
     if (user !== null && user !== undefined) {
       try {
-        let consultasFeriados = user.services.settings.consultasFeriados
         let diaActual = moment().get('date')
         let mesActual = moment().get('month') + 1
         let listFeriados = JSON.parse(Assets.getText('feriados.json'))
         let proximoFeriado = {}
 
         proximoFeriado = (_.find(listFeriados, function (feriado) {
-          return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual) && _.indexOf(consultasFeriados, feriado.categoria) >= 0
+          return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual)
         }))
 
-        if (!proximoFeriado || _.isEmpty(consultasFeriados)) {
+        if (!proximoFeriado) {
           consultasFeriados = ['No laborable']
 
           proximoFeriado = (_.find(listFeriados, function (feriado) {
-            return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual) && _.indexOf(consultasFeriados, feriado.categoria) >= 0
+            return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual)
           }))
         }
 
@@ -34,7 +33,7 @@ Meteor.methods({
           mesActual = 1
 
           proximoFeriado = (_.find(listFeriados, function (feriado) {
-            return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual) && _.indexOf(consultasFeriados, feriado.categoria) >= 0
+            return ((feriado.dia > diaActual && moment(feriado.mes, 'MMMM').get('month') + 1 === mesActual) || moment(feriado.mes, 'MMMM').get('month') + 1 > mesActual)
           }))
         }
 

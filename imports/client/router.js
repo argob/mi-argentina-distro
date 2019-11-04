@@ -3,6 +3,7 @@ import { Session } from 'meteor/session'
 import { moment } from 'meteor/momentjs:moment'
 import { Router } from 'meteor/iron:router'
 import { _ } from 'meteor/underscore'
+import { sessionClear } from '/imports/globalfunctions'
 
 Router.configure({
   layoutTemplate: function () {
@@ -80,6 +81,29 @@ Router.route('/inicio', {
   }
 })
 
+Router.route('/seccion-generica', {
+  name: 'seccionGenerica',
+  action: function () {
+    if (this.ready()) {
+      this.render('seccionGenerica')
+    } else {
+      this.render('loading')
+    };
+    document.title = 'Sección Genérica | Mi Argentina'
+  }
+})
+
+Router.route('/salir', {
+  name: 'salir',
+  action: function () {
+    $('body').attr('class', 'sticky-footer')
+    Session.set('status', 'logout')
+    this.render('loading', { to: 'status' })
+    Meteor.logout()
+    Router.go('logout')
+  }
+})
+
 Router.route('/sesion-expirada', {
   name: 'expired',
   action: function () {
@@ -113,17 +137,6 @@ Router.route('/sesion-cerrada', {
     } else {
       Router.go('inicio')
     }
-  }
-})
-
-Router.route('/salir', {
-  name: 'salir',
-  action: function () {
-    $('body').attr('class', 'sticky-footer')
-    Session.set('status', 'logout')
-    this.render('loading', { to: 'status' })
-    Meteor.logout()
-    Router.go('logout')
   }
 })
 

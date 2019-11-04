@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 import { $ } from 'meteor/jquery'
+import { sessionClear } from '/imports/globalfunctions'
 import './logout.html'
 
 Template.logout.onRendered(() => {

@@ -6,10 +6,9 @@ Meteor.publish('userInfo', function () {
   } else {
     return Meteor.users.find({_id: this.userId}, {fields:
     {
-      'services.oidc.idType': 1,
-      'services.oidc.idNumber': 1,
-      'services.oidc.firstName': 1,
-      'services.oidc.lastName': 1,
+      'services.oidc.email_verified': 1,
+      'services.oidc.given_name': 1,
+      'services.oidc.family_name': 1,
       'services.oidc.name': 1,
       'services.metadata.firstlogin': 1
     }}, {reactive: false})
