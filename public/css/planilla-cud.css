@@ -1,0 +1,149 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  -moz-print-color-adjust: exact;
+  -ms-print-color-adjust: exact;
+}
+
+table#primerPlanilla, table#segundaPlanilla {
+  margin: 0 auto;
+  margin-top:10mm;
+  width: 200mm;
+  border: 0 !important;
+}
+
+#planilla-completa {
+  width: 210mm;
+  margin: auto;
+  color: black !important;
+  font-family: 'Arial', 'times' !important;
+  font-weight: bolder !important;
+  font-size: 11px !important;
+}
+
+.bajada {
+  text-transform: lowercase;
+}
+
+.bajada:first-letter {
+  text-transform: uppercase;
+}
+
+.planilla h2 {
+  text-align: center !important;
+  letter-spacing: 2px !important;
+  font-size: 16px !important;
+}
+
+.planilla-header {
+  color: white !important;
+  padding: 5px !important;
+  text-align: center !important;
+  letter-spacing: 2px !important;
+  font-size: 16px !important;
+}
+
+td {
+  width: 100%;
+  border: 1px solid #000 !important;
+}
+
+.titulos {
+  text-align: center !important;
+  /* ... the rest of the rules ... */
+}
+
+p.titulos {
+  font-size: 14px !important;
+}
+
+p {
+  font-size: 10px;
+  padding: 0px 10px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  text-transform: uppercase;
+}
+
+.grey-fill {
+  background-color: #cccbcb !important;
+  -moz-background-color: #cccbcb;
+  -webkit-background-color: #cccbcb;
+}
+
+.light-grey-fill {
+  background-color: #eaeaea !important;
+  -moz-background-color: #eaeaea;
+  -webkit-background-color: #eaeaea;
+}
+
+.black-fill {
+  background-color: #8f8f8f !important;
+  height: 50px;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.black-fill2 {
+  background-color: #8f8f8f !important;
+  height: 50px;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+}
+
+.border-none {
+  border: none !important;
+}
+
+header {
+  display: none !important;
+}
+
+.sidebar {
+  display: none !important;
+}
+
+footer#footer {
+  display: none !important;
+}
+
+@page {
+  size: Legal portrait;
+  margin: 0;
+}
+
+.footer-planilla {
+  display: none;
+}
+
+.page {
+  page-break-after: always;
+}
+
+.subpage {
+  margin: auto;
+}
+
+
+.page-sidebar {
+  display: none;
+}
+
+main {
+  float: none;
+}
+
+.jumbotron {
+  display: none;
+}
+
+.navbar {
+  display: none;
+}
+
+.border-none {
+  border: none !important;
+}

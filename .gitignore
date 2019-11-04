@@ -1,0 +1,12 @@
+*.DS_Store
+build/
+*.pyc
+.idea/
+node_modules/
+*.csv
+settings.json
+settings_*.json
+fabfileSettings.py
+*~
+package-lock.json
+*.old.*

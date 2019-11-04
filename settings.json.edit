@@ -1,0 +1,26 @@
+{
+  "public": {
+    "id": "http://project-id.gob.ar",
+    "miargentina": "http://project-mi-argentina.gob.ar",
+  },
+  "mailgun":{
+    "key": "key",
+    "domain": "domain"
+  },
+  "oidc": {
+    "authEndpoint": "http://project-id.gob.ar/authorize/",
+    "tokenEndpoint": "http://project-id.gob.ar/token/",
+    "userinfoEndpoint": "http://project-id.gob.ar/userinfo/",
+    "clientId": "your-client-id",
+    "secret": "your-secret-id"
+  },
+  "globalInfo": {
+    "ambiente": "AMBIENTE DE EJECUCION DEL PROYECTO",
+    "apiGateway": {
+      "urlEndpoint": "http://181.209.76.233/api",
+      "tokenEndpoint": "/auth/login",
+      "username": "SOLICITAR",
+      "password": "SOLICITAR",
+    }
+  }
+}

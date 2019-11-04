@@ -1,0 +1,147 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ministerio de Modernización. Presidencia de la Nación.">
+    <meta name="description" content="El perfil digital del ciudadano, todas las interacciones con el Estado en un solo lugar."/>
+    <meta name="keywords" content="mi argentina, trámites, servicios, seguimiento, notificaciones, alertas, Estado, perfil digital"/>
+    <meta name="language" content="Spanish"/>
+    <meta name="revisit" content="1 day"/>
+    <meta name="distribution" content="Global"/>
+    <meta name="robots" content="All"/>
+    <link rel="icon" href="/favicon.ico">
+    <title>Ingresar | Mi Argentina</title>
+    <!-- Google Analytics -->
+    <!-- End Google Analytics -->
+</head>
+
+<template name="base_layout">
+  <div id="skip-link"><a href="#mainContent" class="hash element-invisible element-focusable">Pasar al contenido principal</a></div>
+  <header id="header">
+    <nav class="navbar navbar-top navbar-default nav-header-dashboard" role="navigation">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-6 visible-xs brand-container">
+            <div class="nav navbar-nav navbar-header m-y-1 navbar-left-mobile">
+              <button type="button" class="inicio no-border-shadow" data-id="inicioButton">
+                <div class="media">
+                  <div class="media-left">
+                    <i class="icono-arg-casa-negativo icon-init  m-r-1 text-muted"></i>
+                  </div>
+                  <div class="media-body">
+                    <img alt="Mi Argentina" title="Mi Argentina" src="/img/logos/logo-ma-sin.iso.svg" class="brand-icon visible-xs" height="20">
+                    <h1 class="sr-only">Mi Argentina</h1>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-md-10 hidden-xs">
+            <div class="nav navbar-nav navbar-header m-y-1">
+              <a href="{{ getSetting 'miargentina'}}/inicio" id="logo">
+                <img alt="Mi Argentina" title="Mi Argentina" src="/img/logos/miargentina.svg" class="brand-icon hidden-xs" height="50">
+                <h1 class="sr-only">Mi Argentina</h1>
+              </a>
+            </div>
+          </div>
+          {{#if statusOk}}
+            <div class="nav navbar-nav navbar-right navbar-right-mobile navbar-right-header m-t-2">
+              <button class="text-primary no-border-shadow dropdown-toggle" type="button" id="dropdown-micuenta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span>Mi cuenta </span>
+                <i class="fa fa-chevron-down text-muted m-l-1"></i>
+              </button>
+              <div class="dropdown-menu dropdown-micuenta" aria-labelledby="dropdown-micuenta">
+                <ul>
+                  <li><p><strong>{{ currentUser.services.oidc.name }}</strong></p></li>
+                  <li><p>{{#if extranjero}}Pasaporte{{else}} {{/if}} {{#if extranjero}} {{currentUser.services.oidc.idNumber}} {{else}} {{formatCUIL}} {{/if}}</p></li>
+                  <li class="m-t-1"><small class="m-t-1">{{#if validado}}Validado Nivel {{ currentUser.services.oidc.validation_level }} &nbsp;<i class="fa icono-arg-validez-legal text-primary"></i>{{else}} Identidad no validada{{/if}}</small></li>
+                  <hr>
+                  <li><a href="{{ getSetting 'id' }}/perfil/{{next}}">Mi perfil</a></li>
+                  <li><a href="{{ getSetting 'id' }}/vincular-redes-sociales/{{next}}">Redes sociales</a></li>
+                  <li data-id="configurar-notificaciones"><a href="{{ getSetting 'miargentina' }}/configurar-notificaciones">Configurar notificaciones</a></li>
+                  <li><a href="{{ getSetting 'id' }}/password/change/{{next}}">Configurar mi cuenta</a></li>
+                  <li><a href="{{ getSetting 'id' }}/seguridad">Seguridad</a></li>
+                  <li><a href="{{ getSetting 'id' }}/terminos-condiciones/{{next}}">Términos y condiciones</a></li>
+                  <hr class="m-y-1">
+                  {{#if currentUser.services.oidc.admin}}
+                  <li><a href="{{ getSetting 'id' }}/admin">Administrador</a></li>
+                  {{/if}}
+                  <li><a href="{{ getSetting 'miargentina' }}/salir" class="logout">Cerrar la sesión</a></li>
+                </ul>
+                <button class="btn btn-link no-border-shadow dropdown-toggle sr-only" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Cerrar menú mi cuenta</span>
+                  <i class="fa fa-chevron-up text-muted text-center visible-xs" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+
+    {{#if statusOk}}
+      {{> navmobile}}
+    {{/if}}
+  </header>
+
+  {{#if statusOk}}
+    <div id="primaryContent">
+      <section class="p-y-0">
+        {{#if FirstLogin}}
+          {{> modalfirstlogin}}
+        {{/if}}
+        <div class="container-fluid">
+          <div id="dashboard" class="row dashboard">
+            <div class="col-lg-3 col-sm-4 sidebar p-l-0 hidden-xs" id="menu">
+              {{> nav}}
+            </div>
+            <main class="col-lg-12 col-sm-8" aria-live="assertive" id="mainContent" role="main">
+              {{> yield 'titleSection'}}
+              <div class="row main">
+                <div id="yieldContent" class="{{#if fullSizeTemplate}}col-md-12{{else}}col-lg-8 col-xs-12{{/if}} gral-container">
+                  {{> yield }}
+                </div>
+                <div class="col-lg-4 col-xs-12 m-y-1">
+                  <div class="main-panels panels-row-miargentina">
+                    {{> yield 'secondaryPanel'}}
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </section>
+    </div>
+  {{else}}
+    {{#if status}}
+      {{> yield 'status'}}
+    {{else}}
+      {{> loading}}
+    {{/if}}
+  {{/if}}
+
+  <footer class="main-footer" id="footer">
+    {{> footer}}
+  </footer>
+
+</template>
+
+<template name="footer">
+  <div class="container-fluid">
+    <div class="row footer" style="">
+      <div class="col-xs-12 col-sm-4 first-footer-item" style="">
+        <a href="{{getSetting 'argentinagobar'}}/mi/terminos-y-condiciones" target="_blank"><span class="sr-only">Abrir vínculo en nueva pestaña</span>Términos y condiciones</a>
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <img class="image-responsive" alt="Subsecretaría de Gobierno Digital" src="/img/logos/logo-ssgd.svg">
+      </div>
+      <div class="col-xs-12 col-sm-2">
+        <img class="image-responsive" alt="Presidencia de la Nación" src="/img/logos/logo-presidencia.svg">
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="tooltip">
+</template>

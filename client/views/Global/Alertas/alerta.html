@@ -1,0 +1,52 @@
+<template name="alerta">
+  {{#if elementVisibility id=id element=element action=action}}
+    <div id={{id}} class="alert alert-{{style}} {{status}} alert {{#if close}}pclose{{/if}}">
+      <div class="{{#unless icono}}row{{/unless}}">
+        {{#unless icono}}
+          {{#if name}}
+            <div class="{{#if close}}col-xs-10 col-md-11{{else}}col-xs-12{{/if}}">
+              <h2 tabindex="{{tabindex}}" role="{{role}}">{{name}}</h2>
+            </div>
+          {{/if}}
+          {{#if close}}
+            <div class="col-xs-2 col-md-1">
+              <div class="text-right btn-close">
+                <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
+              </div>
+            </div>
+          {{/if}}
+        {{/unless}}
+        <div class="{{#unless icono}}col-xs-12{{/unless}}">
+          {{#if icono}}
+            <div class="media">
+              <div class="media-left">
+                <i class="{{icono}}"></i>
+              </div>
+              <div class="media-body">
+                <div class="row">
+                  {{#if name}}
+                    <div class="{{#if close}}col-xs-10 col-md-11{{else}}col-xs-12{{/if}}">
+                      <h2 tabindex="{{tabindex}}" role="{{role}}">{{name}}</h2>
+                    </div>
+                  {{/if}}
+                  {{#if close}}
+                    <div class="col-xs-2 col-md-1">
+                      <div class="text-right btn-close">
+                        <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
+                      </div>
+                    </div>
+                  {{/if}}
+                  <div class="col-xs-12">
+                    {{> Template.dynamic template=body}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {{else}}
+            {{> Template.dynamic template=body}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/if}}
+</template>

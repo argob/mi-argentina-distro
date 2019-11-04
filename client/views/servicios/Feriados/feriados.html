@@ -1,0 +1,21 @@
+<template name='nextHoliday'>
+  {{#if loading "nextHoliday"}}
+    {{> loading_list}}
+  {{else}}
+    {{#if errorNextHoliday}}
+      {{> error_list}}
+    {{else}}
+        <div class="media">
+          <div class="media-body">
+            {{#if nextHoliday}}
+              <p class="text-muted"><b>{{nextHoliday.dia}} de {{nextHoliday.mes}}{{#if nextHoliday.diasSiguientes}} y {{nextHoliday.diasSiguientes}} de {{nextHoliday.mesSiguiente}}{{/if}}</b>. {{nextHoliday.feriado}}</p>
+            {{else}}
+              <p class="text-muted">Información no disponible</p>
+            {{/if}}
+            <p class="text-muted"><a href="{{getSetting 'argentinagobar'}}/interior/feriados" target="_blank"><span class="sr-only">Abrir vínculo en nueva pestaña</span>Ver todos los feriados</a></p>
+            <p class="text-muted"><a href="{{getSetting 'miargentina'}}/configurar-notificaciones/configurar-feriados"><em>(Configurar)</em></a></p>
+          </div>
+        </div>
+    {{/if}}
+  {{/if}}
+</template>

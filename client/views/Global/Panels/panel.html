@@ -1,0 +1,45 @@
+<template name="panel">
+  {{#if elementVisibility id=id element=element action=action}}
+    <div class="{{#if size}}col-lg-{{size}} col-md-12 col-sm-12 col-xs-12{{/if}} panels-row-miargentina" id={{id}} aria-live="polite">
+      <div class="panel panel-default panel-border-{{#if status}}{{status}}{{else}}gray{{/if}} panel-nolink {{#if close}}pclose{{/if}}">
+        <div class="panel-heading">
+          <div class="row">
+            {{#if close}}
+              <div class="col-xs-2 col-xs-offset-10">
+                <div class="text-right btn-close">
+                  <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
+                </div>
+              </div>
+            {{/if}}
+            <div class="{{#if action}}col-xs-11 panel-heading-close{{else}}col-md-12{{/if}}">
+              {{#if volver}}
+                {{> volver}}
+              {{/if}}
+              <h2 class="{{#if volver}}pull-left titulo-con-volver m-y-0{{/if}}">{{name}}</h2>
+            </div>
+          </div>
+        </div>
+        <div class="panel-body">
+          {{> Template.dynamic template=body}}
+        </div>
+        {{#if statusValidez}}
+          <div class="panel-content-bottom">
+            <div class="media">
+              <div class="media-left p-r-1">
+                <i class="fa {{#if statusValidez.status}}icono-arg-validez-legal text-primary{{else}}fa-ban text-danger{{/if}} fa-1x m-t-0"></i>
+              </div>
+              <div class="media-body">
+                <p><strong>{{statusValidez.texto}}</strong></p>
+              </div>
+            </div>
+          </div>
+        {{/if}}
+        {{#if footer}}
+          <div class="panel-footer">
+            {{> Template.dynamic template=footer}}
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</template>

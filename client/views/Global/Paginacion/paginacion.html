@@ -1,0 +1,23 @@
+<template name="paginacion">
+  {{#if paginacion}}
+    <nav class="text-center">
+      <ul class="pagination m-y-0 m-t-1">
+        {{#unless first}}
+          <li><a href="#" aria-label="First" id="first" name={{paginationName}} ><span aria-hidden="true">«</span></a></li>
+          <li><a href="#" aria-label="Previous" id="previous" name={{paginationName}}><span aria-hidden="true">‹</span></a></li>
+        {{/unless}}
+        {{#each number in paginacion}}
+          <li class="pageSelector {{#if isActive number}}active{{/if}}" id="{{number}}" name={{paginationName}}><a class="page" href="#">{{number}}</a></li>
+          {{> paginacion_contenido paginationName}}
+        {{/each}}
+        {{#unless last}}
+          <li><a href="#" aria-label="Next" id="next" name={{paginationName}}><span aria-hidden="true">›</span></a></li>
+          <li><a href="#" aria-label="Last" id="last" name={{paginationName}}><span aria-hidden="true">»</span></a></li>
+        {{/unless}}
+      </ul>
+    </nav>
+  {{/if}}
+</template>
+
+<template name="paginacion_contenido">
+</template>

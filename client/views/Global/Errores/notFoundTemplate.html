@@ -1,0 +1,24 @@
+<template name="notFound">
+  {{> panel id="elementNotFound" name="No hay información para mostrar" body="body_notfound" status="warning"}}
+</template>
+
+<template name="body_notfound">
+  <ul class="list-group">
+    <li class="list-group-item">
+      <div class="media">
+        <div class="media-left hidden-xs">
+          <i class="fa fa-warning fa-fw fa-2x m-t-1" style="color: #fec221;"></i>
+        </div>
+        <div class="media-body media-middle">
+          <p>Esto puede ser porque:</p>
+          <ul>
+            <li>El trámite o consulta ya no existe</li>
+            <li>La dirección de la página está mal escrita</li>
+            <li>Hay un problema con el servicio que provee los datos</li>
+          </ul>
+          <p><a href="{{ getSetting 'miargentina' }}/">Ir a página de inicio de Mi Argentina</a></p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</template>
