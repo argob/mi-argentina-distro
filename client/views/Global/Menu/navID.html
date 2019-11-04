@@ -1,0 +1,24 @@
+<template name="navID">
+  <div class="nav navbar-nav navbar-right navbar-right-mobile navbar-right-header m-t-2">
+    <button class="text-primary no-border-shadow dropdown-toggle" type="button" id="dropdown-micuenta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span>Mi cuenta </span>
+      <i class="fa fa-chevron-down text-muted m-l-1"></i>
+    </button>
+    <div class="dropdown-menu dropdown-micuenta" aria-labelledby="dropdown-micuenta">
+      <ul>
+        <li><p><strong>{{ currentUser.services.oidc.name }}</strong></p></li>
+        <hr>
+        <li><a href="{{ getSetting 'id' }}/perfil/{{next}}">Mi perfil</a></li>
+        <hr class="m-y-1">
+        {{#if currentUser.services.oidc.admin}}
+          <li><a href="{{ getSetting 'id' }}/admin">Administrador</a></li>
+        {{/if}}
+        <li><a href="{{ getSetting 'miargentina' }}/salir" class="logout">Cerrar la sesión</a></li>
+      </ul>
+      <button class="btn btn-link no-border-shadow dropdown-toggle sr-only" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Cerrar menú mi cuenta</span>
+        <i class="fa fa-chevron-up text-muted text-center visible-xs" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</template>
