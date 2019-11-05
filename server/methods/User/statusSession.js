@@ -3,7 +3,7 @@ import { HTTP } from 'meteor/http'
 import { _ } from 'meteor/underscore'
 import { OIDC } from 'meteor/id:oidc-client'
 import { moment } from 'meteor/momentjs:moment'
-import { captureError } from '../globalfunction'
+import { captureError } from '../../globalfunction'
 
 Meteor.methods({
   // ESTADO DEL USUARIO LOGUEADO
@@ -70,27 +70,7 @@ Meteor.methods({
     } else {
       return false
     }
-  },
-  // Seteos iniciales de un usuario nuevo
-  SetUserDefault: function () {
-    let user = Meteor.user()
-    if (user !== null && user !== undefined) {
-      if (user.services.metadata === undefined) {
-        Meteor.users.update({'_id':user._id},{$set:{'services.metadata':{'firstlogin': true}}})
-      }
-    }
-  },
-  // Bandera para identificar si el usuario ingresa a MiArgentina por primera vez
-  FirstLogin: function (status) {
-    let user = Meteor.user()
-    if (user !== null && user !== undefined) {
-      if (status === 'continuar') {
-        Meteor.users.update({'_id': user._id}, {$set: {
-          'services.metadata.firstlogin': false
-        }})
-      };
-    };
-  },
+  }
 })
 
 // ACTUALIZACION DE DATOS OIDC DEL USUARIO LOGUEADO

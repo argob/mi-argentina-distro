@@ -2,8 +2,8 @@ import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 import { moment } from 'meteor/momentjs:moment'
 import { Tokens } from '/lib/collection.js'
-import { globalInfo } from '../startup.js'
-import { captureError } from '../globalfunction'
+import { globalInfo } from './startup.js'
+import { captureError } from './globalfunction'
 
 const formatDate = 'DD/MM/YYYY HH:mm:ss'
 

@@ -1,3 +1,12 @@
 <template name="estadoCuenta">
-  
+  {{#with statusProfile}}
+    <div class="wizard">
+      <h2 class="text-primary">Tu perfil esta configurado al {{percent}}%</h2>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="{{percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent}}%;">
+        </div>
+      </div>
+      <a href="{{getSetting 'id'}}/perfil" type="button" class="btn btn-primary">EDITAR MI PERFIL</a>
+    </div>
+  {{/with}}
 </template>

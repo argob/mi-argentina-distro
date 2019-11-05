@@ -1,4 +1,5 @@
 import { structurePanel } from '/imports/client/defaultStructures'
+import { getStatusProfile } from './method'
 
 Template.inicio.helpers({
   estadoCuenta: function () {
@@ -8,5 +9,15 @@ Template.inicio.helpers({
     structurePanel.service = 'estadoCuenta'
     structurePanel.body = 'estadoCuenta'
     return structurePanel
+  }
+})
+
+Template.estadoCuenta.onRendered(()=> {
+  getStatusProfile()
+})
+
+Template.estadoCuenta.helpers({
+  statusProfile: function () {
+    return Session.get('statusProfile') && Session.get('statusProfile').response
   }
 })
