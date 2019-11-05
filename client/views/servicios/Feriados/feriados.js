@@ -18,6 +18,11 @@ Template.inicio.helpers({
     settings.service = Session.get('nextHoliday')
     settings.bodyTemplate = 'nextHoliday'
     settings.footer = 'nextHolidayFooter'
+    settings.action = {
+      close: false,
+      collapse: true,
+      collapsed: false
+    }
     return settings
   }
 })

@@ -13,6 +13,11 @@ Template.inicio.helpers({
     settings.name = 'Estado cuenta'
     settings.service = Session.get('statusProfile')
     settings.bodyTemplate = 'estadoCuenta'
+    settings.action = {
+      close: false,
+      collapse: false,
+      collapsed: false
+    }
     return settings
   }
 })

@@ -1,22 +1,24 @@
 <template name="panel">
   {{#with settings}}
     {{#if visibility}}
-      <div class="col-lg-{{size}} panels-row-miargentina" id={{id}} aria-live="polite">
+      <div class="col-lg-{{size}} panels-row-miargentina" data-id={{id}} aria-live="polite">
         <div class="panel panel-default panel-border-{{status}} panel-nolink {{#if close}}pclose{{/if}} {{#unless service}}state-loading{{/unless}}">
           {{> panelHeading }}
-          <div class="panel-body">
-            {{#if service.response}}
-              {{> Template.dynamic template=bodyTemplate}}
-            {{/if}}
-            {{#if service.error}}
-              {{> errorPanel}}
+          <div class="panel-collapse collapse {{#unless action.collapsed}}in{{/unless}}" role="tabpanel" id="{{id}}" aria-expanded="{{#if action.collapsed}}false{{else}}true{{/if}}">
+            <div class="panel-body">
+              {{#if service.response}}
+                {{> Template.dynamic template=bodyTemplate}}
+              {{/if}}
+              {{#if service.error}}
+                {{> errorPanel}}
+              {{/if}}
+            </div>
+            {{#if footer}}
+              <div class="panel-footer">
+                {{> Template.dynamic template=footer}}
+              </div>
             {{/if}}
           </div>
-          {{#if footer}}
-            <div class="panel-footer">
-              {{> Template.dynamic template=footer}}
-            </div>
-          {{/if}}
         </div>
       </div>
     {{/if}}
@@ -25,21 +27,18 @@
 
 <template name="panelHeading">
   {{#if service}}
-    <div class="panel-heading">
+    <div class="panel-heading {{#if action.collapsed}}collapsed{{/if}}" data-toggle="collapse" data-target="#{{id}}" aria-expanded="{{#if action.collapsed}}false{{else}}true{{/if}}" aria-controls="{{id}}">
       <div class="row">
-        {{#if close}}
-          <div class="col-xs-2 col-xs-offset-10">
-            <div class="text-right btn-close">
-              <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
-            </div>
-          </div>
-        {{/if}}
-        <div class="{{#if action}} panel-heading-close{{else}}col-md-12{{/if}}">
-          {{#if volver}}
-            {{> volver}}
-          {{/if}}
-          <h2 class="{{#if volver}}pull-left titulo-con-volver m-y-0{{/if}}">{{name}}</h2>
+        <div class="col-xs-10 col-md-11">
+          <h2 class="text-capitalize">{{name}}</h2>
         </div>
+        {{#if action}}
+          {{#if action.collapse}}
+            <div class="col-xs-2 col-md-1 text-right">
+              <a class="btn-collapse"><i class="fa fa-chevron-up text-muted {{#if action.collapsed}}collapseGira{{/if}}"></i></a>
+            </div>
+          {{/if}}
+        {{/if}}
       </div>
     </div>
   {{/if}}
