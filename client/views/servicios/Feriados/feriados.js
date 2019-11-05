@@ -12,11 +12,12 @@ Template.inicio.helpers({
   nextHoliday: function () {
     let settings = new StructurePanel()
     settings.id = 'nextHoliday'
-    settings.status = 'primary'
+    settings.status = Session.get('nextHoliday') && Session.get('nextHoliday').response ?'primary' : settings.status
     settings.size = 6
     settings.name = 'Próximo feriado'
     settings.service = Session.get('nextHoliday')
     settings.bodyTemplate = 'nextHoliday'
+    settings.footer = 'nextHolidayFooter'
     return settings
   }
 })

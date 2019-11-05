@@ -5,11 +5,10 @@ export function StructurePanel () {
     status: 'gray',
     name: '',
     visibility: true,
-    visibilityDependence: true,
     bodyTemplate: '',
     service: '',
     footer: false,
-    error: false
+    action: false
   }
 }
 

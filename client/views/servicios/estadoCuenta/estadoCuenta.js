@@ -9,6 +9,7 @@ Template.inicio.helpers({
   estadoCuenta: function () {
     let settings = new StructurePanel()
     settings.id = 'estadoCuenta'
+    settings.status = Session.get('statusProfile') && Session.get('statusProfile').response ?'primary' : settings.status
     settings.name = 'Estado cuenta'
     settings.service = Session.get('statusProfile')
     settings.bodyTemplate = 'estadoCuenta'
