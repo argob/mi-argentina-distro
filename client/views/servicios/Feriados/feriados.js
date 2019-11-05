@@ -2,22 +2,23 @@ import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 import { Session } from 'meteor/session'
 import { getHoliday } from './method'
-import { structurePanel } from '/imports/client/defaultStructures'
+import { StructurePanel } from '/imports/client/defaultStructures'
+
+Template.inicio.onRendered(() => {
+  getHoliday()
+})
 
 Template.inicio.helpers({
   nextHoliday: function () {
-    structurePanel.size = '6'
-    structurePanel.id = 'nextHoliday'
-    structurePanel.name = 'Próximo feriado'
-    structurePanel.service = 'nextHoliday'
-    structurePanel.body = 'nextHoliday'
-    structurePanel.status = 'primary'
-    return structurePanel
+    let settings = new StructurePanel()
+    settings.id = 'nextHoliday'
+    settings.status = 'primary'
+    settings.size = 6
+    settings.name = 'Próximo feriado'
+    settings.service = Session.get('nextHoliday')
+    settings.bodyTemplate = 'nextHoliday'
+    return settings
   }
-})
-
-Template.nextHoliday.onRendered(() => {
-  getHoliday()
 })
 
 Template.nextHoliday.helpers({

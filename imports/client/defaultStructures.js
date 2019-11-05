@@ -1,19 +1,24 @@
-export let structurePanel = {
-  id: '',
-  name: '',
-  size: 12,
-  visibility: true,
-  serviceName: '',
-  visibilityDependence: true,
-  status: 'gray',
-  body: '',
-  footer: false,
+export function StructurePanel () {
+  return {
+    id: '',
+    size: 12,
+    status: 'gray',
+    name: '',
+    visibility: true,
+    visibilityDependence: true,
+    bodyTemplate: '',
+    service: '',
+    footer: false,
+    error: false
+  }
 }
 
-export let structureTitle = {
-  breadcrumb: [],
-  classTitle: '',
-  title: '',
-  complementoTitle: '',
-  bajada: '',
+export function StructureTitle () {
+  return {
+    breadcrumb: [],
+    classTitle: '',
+    title: '',
+    complementoTitle: '',
+    bajada: '',
+  }
 }

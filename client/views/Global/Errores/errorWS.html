@@ -1,32 +1,10 @@
-<template name="error_panel">
-  <div class="panels-row-miargentina">
-    <div class="panel panel-default panel-border-gray panel-nolink">
-      <div class="panel-heading" role="tab">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>{{nombre}}</h2>
-          </div>
-        </div>
-      </div>
-      <div class="panel-body">
-        <ul class="list-group">
-          <li class="list-group-item">
-            <div class="media" style="order:''">
-              <div class="media-left">
-                <i class="fa fa-exclamation-triangle fa-fw fa-2x text-muted"></i>
-              </div>
-              <div class="media-body">
-                <h3>El servicio <span class="text-danger">no se encuentra disponible en este momento</span>, intentá de nuevo más tarde.</h3>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<template name="errorPanel">
+  <ul class="list-group">
+    {{> errorList}}
+  </ul>
 </template>
 
-<template name="error_list">
+<template name="errorList">
   <li class="list-group-item">
     <div class="media" style="order:''">
       <div class="media-left">
@@ -42,26 +20,6 @@
       </div>
     </div>
   </li>
-</template>
-
-<template name="error_credential">
-  <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-    <div class="panel panel-default panel-nolink panel-border-gray panel-credenciales">
-      <div class="panel-heading">
-        <h2>{{nombre}}</h2>
-      </div>
-      <div class="panel-body">
-        <div class="media">
-          <div class="media-left">
-            <i class="fa fa-exclamation-triangle fa-fw fa-2x text-muted"></i>
-          </div>
-          <div class="media-body">
-            <p>El servicio <span class="text-danger">no se encuentra disponible en este momento</span>, intentá de nuevo más tarde.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <template name="error_container">
