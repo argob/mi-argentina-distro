@@ -17,11 +17,10 @@ Template.inicio.helpers({
     settings.name = 'Próximo feriado'
     settings.service = Session.get('nextHoliday')
     settings.bodyTemplate = 'nextHoliday'
-    settings.footer = 'nextHolidayFooter'
+    settings.footer = Session.get('nextHoliday') && Session.get('nextHoliday').response ?'nextHolidayFooter': false
     settings.action = {
-      close: false,
-      collapse: true,
-      collapsed: false
+      name: '', //'collapse', // 'close'
+      currentStatus: false
     }
     return settings
   }
