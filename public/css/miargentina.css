@@ -94,7 +94,7 @@ form h3 {
 	display: inline;
 }
 
-.panel-borders {
+.panel-border-none {
 	border: 1px solid #dee2e6;
 }
 
@@ -280,7 +280,7 @@ a.btn-collapse i.collapseGira {
 	margin-bottom: 20px;
 }
 
-.panel-borders .panel-heading {
+.panel-border-none .panel-heading {
 	border: none !important;
 }
 
