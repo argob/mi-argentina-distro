@@ -57,14 +57,6 @@ Template.base_layout.helpers({
 })
 
 Template.base_layout.events({
-  'click .login-button': function (event) {
-    Session.delete('status')
-    sessionClear('login')
-    Meteor.loginWithOIDC(
-      {requestPermissions: ['profile', 'email', 'optional']},
-      function (error) { if (error) {} }
-    )
-  },
   'keypress #TextoTramite': function (event) {
     if (event.keyCode === 13) {
       window.location.href = Meteor.settings.public.argentinagobar + '/buscar/' + encodeURI(encodeURI($('#TextoTramite')[0].value))

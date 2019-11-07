@@ -29,7 +29,7 @@ Template.volver.events({
       if (arrayPath.length > 1) {
         Router.go('/' + arrayPath[0])
       } else {
-        Router.go('/inicio')
+        Router.go('/')
       }
     } else {
       Router.go(paginaAnterior)

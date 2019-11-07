@@ -9,7 +9,6 @@ Template.alerta.events({
     }
     Meteor.call("SaveViewConfig", dataID, 'alert', dataAction, function(error, response){
       if(error){
-        //console.log(error)
         $( "#" +  dataID).before('<div data-id="' + dataID + '" class="alert alert-danger">No se pudo realizar la acción solicitada, intenta de nuevo.</div>')
         $( "#" +  dataID).removeClass('hidden')
       }

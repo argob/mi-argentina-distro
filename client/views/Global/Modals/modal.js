@@ -13,7 +13,7 @@ Template.modalfirstlogin.events({
     $("body").removeClass("modal-open");
     Meteor.call('FirstLogin', 'continuar', function (error, response) {
       if (!error) {
-        Router.go('/inicio')
+        Router.go('/')
       }
     })
   },

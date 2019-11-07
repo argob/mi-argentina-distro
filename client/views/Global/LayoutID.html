@@ -1,0 +1,67 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Ministerio de Modernización. Presidencia de la Nación.">
+  <meta name="description" content="El perfil digital del ciudadano, todas las interacciones con el Estado en un solo lugar." />
+  <meta name="keywords" content="mi argentina, trámites, servicios, seguimiento, notificaciones, alertas, Estado, perfil digital" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit" content="1 day" />
+  <meta name="distribution" content="Global" />
+  <meta name="robots" content="All" />
+  <link rel="icon" href="/favicon.ico">
+  <title>Ingresar | Mi Argentina</title>
+  <!-- Google Analytics -->
+  <!-- End Google Analytics -->
+</head>
+
+<template name="baseLayoutID">
+  <div id="skip-link">
+    <a href="#mainContent" class="hash element-invisible element-focusable">Pasar al contenido principal</a>
+  </div>
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+
+      <header>
+        <!-- logo y boton mi cuenta -->
+        <div class="navbar navbar-top " role="navigation" aria-labelledby="Mi cuenta">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                <div class="nav navbar-nav navbar-header m-y-1">
+                  <a href="{{getSetting 'miargentina'}}/" class="">
+                    <img alt="Mi Argentina" title="Mi Argentina" src="/img/logos/miargentina.svg" height="40">
+                    <h1 class="sr-only" aria-hidden="true">Mi Argentina</h1>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main role="main">
+        {{> yield }}
+      </main>
+
+      <footer>
+        {{> footerID}}
+      </footer>
+
+    </div>
+  </div>
+</template>
+
+<template name="footerID">
+  <div class="text-center">
+      <a href="{{getSetting 'argentinagobar'}}/mi/terminos-y-condiciones" target="_blank"><span class="sr-only">Abrir vínculo en nueva pestaña</span>Términos y condiciones</a>
+  </div>
+  <div class="row m-t-2">
+    <div class="col-sm-6">
+      <img class="image-responsive" alt="Subsecretaría de Gobierno Digital" src="/img/logos/logo-ssgd.svg">
+    </div>
+    <div class="col-sm-6">
+      <img class="image-responsive" alt="Presidencia de la Nación" src="/img/logos/logo-presidencia.svg">
+    </div>
+  </div>
+</template>

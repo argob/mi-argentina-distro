@@ -1,14 +1,14 @@
 <template name="logout">
-  <section class="container-fluid container-id">
-    <div class="row">
-      <div class="col-sm-4 col-sm-offset-4">
-        <p><i class="fa fa-sign-out fa-4x text-primary"></i></p>
-        <h2>Cerraste la sesión de tu cuenta de Mi Argentina</h2>
-        <p>Volvé a ingresar para ver tus trámites pendientes y notificaciones o buscá más trámites en el sitio.</p>
-        <p class="m-t-4">
-          <a href="#" class="btn btn-success login-button">Ingresar de nuevo</a>
-        </p>
-      </div>
-    </div>
-  </section>
+  {{#if status}}
+    <section class="well m-t-0">
+      <p><i class="fa fa-sign-out fa-4x text-primary"></i></p>
+      <h2>Cerraste la sesión de tu cuenta de Mi Argentina</h2>
+      <p>Volvé a ingresar para ver tus trámites pendientes y notificaciones o buscá más trámites en el sitio.</p>
+      <p class="m-t-4">
+        <a href="#" class="btn btn-success login-button">Ingresar de nuevo</a>
+      </p>
+    </section>
+  {{else}}
+    {{> loading}}
+  {{/if}}
 </template>

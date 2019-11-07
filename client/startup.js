@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor'
-import '/imports/client/router.js'
+import '/imports/client/userStatus'
 
 Meteor.startup(function () {
 })

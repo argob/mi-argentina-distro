@@ -39,56 +39,43 @@
 
           <div class="col-md-10 hidden-xs">
             <div class="nav navbar-nav navbar-header m-y-1">
-              <a href="{{ getSetting 'miargentina'}}/inicio" id="logo">
+              <a href="{{ getSetting 'miargentina'}}/" id="logo">
                 <img alt="Mi Argentina" title="Mi Argentina" src="/img/logos/miargentina.svg" class="brand-icon hidden-xs" height="50">
                 <h1 class="sr-only">Mi Argentina</h1>
               </a>
             </div>
           </div>
-          {{#if statusOk}}
-            {{> navID}}
-          {{/if}}
+          {{> navID}}
         </div>
       </div>
     </nav>
 
-    {{#if statusOk}}
-      {{> navmobile}}
-    {{/if}}
+    {{> navmobile}}
   </header>
 
-  {{#if statusOk}}
-    <div id="primaryContent">
-      <section class="p-y-0">
-        {{#if FirstLogin}}
-          {{> modalfirstlogin}}
-        {{/if}}
-        <div class="container-fluid">
-          <div id="dashboard" class="row dashboard">
-            <div class="col-lg-3 col-sm-4 sidebar p-l-0 hidden-xs" id="menu">
-              {{> nav}}
-            </div>
-            <main class="col-lg-12 col-sm-8" aria-live="assertive" id="mainContent" role="main">
-              <div id="yieldContent" class="gral-container">
-                {{> yield }}
-              </div>
-            </main>
+  <div id="primaryContent">
+    <section class="p-y-0">
+      {{#if FirstLogin}}
+        {{> modalfirstlogin}}
+      {{/if}}
+      <div class="container-fluid">
+        <div id="dashboard" class="row dashboard">
+          <div class="col-lg-3 col-sm-4 sidebar p-l-0 hidden-xs" id="menu">
+            {{> nav}}
           </div>
+          <main class="col-lg-12 col-sm-8" aria-live="assertive" id="mainContent" role="main">
+            <div id="yieldContent" class="gral-container">
+              {{> yield }}
+            </div>
+          </main>
         </div>
-      </section>
-    </div>
-  {{else}}
-    {{#if status}}
-      {{> yield 'status'}}
-    {{else}}
-      {{> loading}}
-    {{/if}}
-  {{/if}}
+      </div>
+    </section>
+  </div>
 
   <footer class="main-footer" id="footer">
     {{> footer}}
   </footer>
-
 </template>
 
 <template name="footer">

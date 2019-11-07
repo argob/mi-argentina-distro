@@ -480,6 +480,11 @@ a.btn-collapse i.collapseGira {
 	background-color: #ffffff !important;
 }
 
+.nav.navbar-nav.navbar-header a img {
+	margin: 0 auto;
+	width: 100%;
+}
+
 .navbar-right .dropdown-micuenta {
 	right: 3px;
 	width: 275px;
