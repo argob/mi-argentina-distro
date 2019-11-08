@@ -1,4 +1,4 @@
-<img src="public/img/logos/miargentina.svg" alt="drawing" width="400"/>
+<img src="/public/img/logos/miargentina.svg" alt="MiArgentina" width="400"/>
 
 ## Portal digital del Ciudadano.
 ***
