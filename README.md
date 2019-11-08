@@ -1,4 +1,4 @@
-# MiArgentina ![](/public/img/logos/LOGO_LOADING.png)
+# MiArgentina ![](/public/img/logos/LOGO_LOADING.png =100x20)
 
 ## Portal digital del Ciudadano.
 ***
