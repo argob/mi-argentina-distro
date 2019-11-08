@@ -4,13 +4,6 @@ import { Session } from 'meteor/session'
 import { $ } from 'meteor/jquery'
 import { Router } from 'meteor/iron:router'
 
-Template.volver.rendered = function () {
-  if (Session.get('otherLocation') !== undefined) {
-    $('.volver').attr('href', Session.get('otherLocation'))
-    Session.delete('otherLocation')
-  }
-}
-
 Template.volver.events({
   'click .volver': function (event) {
     event.preventDefault()
@@ -29,11 +22,10 @@ Template.volver.events({
       if (arrayPath.length > 1) {
         Router.go('/' + arrayPath[0])
       } else {
-        Router.go('/')
+        Router.go('/inicio')
       }
     } else {
       Router.go(paginaAnterior)
-      // window.history.back()
     }
   }
 })

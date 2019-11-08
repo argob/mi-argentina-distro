@@ -63,5 +63,23 @@ Tracker.autorun(() => {
     Meteor.defer(() => {
       userStatus(user)
     })
+
+    $(window).scrollTop(0)
+
+    let except=['salir','logout','expired'];
+    if (except.indexOf(currentRoute.route.options.name) < 0) {
+      let paginaActual = window.sessionStorage.getItem('PaginaActual')
+      let currentPath = currentRoute.url.replace(Meteor.settings.public.miargentina, '')
+      let rutaActual = currentPath
+      if (paginaActual === null) {
+        window.sessionStorage.setItem('PaginaActual', rutaActual)
+      } else {
+        if (paginaActual !== rutaActual) {
+          window.sessionStorage.setItem('PaginaAnterior', paginaActual)
+          window.sessionStorage.setItem('PaginaActual', rutaActual)
+        }
+      }
+    }
+
   }
 })

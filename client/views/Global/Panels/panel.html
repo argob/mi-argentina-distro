@@ -29,14 +29,19 @@
   <div class="panel-heading {{#unless service}}p-t-2{{/unless}} {{#if action.currentStatus}}collapsed{{/if}} {{#if isEqual action.name 'close'}}panel-heading-close{{/if}}" data-toggle="{{#if isEqual action.name 'collapse'}}collapse{{/if}}" data-target="#{{id}}" aria-expanded="{{action.currentStatus}}" aria-controls="{{id}}">
     {{#if service}}
       <div class="row">
-        <div class="col-xs-10 col-md-11">
+        {{#if isEqual action.name 'volver'}}
+          <div class="col-xs-2 col-md-2">
+            {{> volver}}
+          </div>
+        {{/if}}
+        <div class="col-xs-10 col-md-10">
           <h2 class="text-capitalize">{{name}}</h2>
         </div>
-        {{#if action}}
+        {{#unless isEqual action.name 'volver'}}
           <div class="col-xs-2 col-md-1 text-right">
             <a class="btn-collapse"><i class="{{#if isEqual action.name 'close'}}fa fa-close{{/if}} {{#if isEqual action.name 'collapse'}}fa fa-chevron-up text-muted {{#if action.currentStatus}}collapseGira{{/if}}{{/if}}" data-id="{{id}}" data-action="{{action.name}}"></i></a>
           </div>
-        {{/if}}
+        {{/unless}}
       </div>
     {{/if}}
   </div>

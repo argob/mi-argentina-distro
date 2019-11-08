@@ -19,8 +19,8 @@ Template.inicio.helpers({
     settings.bodyTemplate = 'nextHoliday'
     settings.footer = Session.get('nextHoliday') && Session.get('nextHoliday').response ?'nextHolidayFooter': false
     settings.action = {
-      name: '', //'collapse', // 'close'
-      currentStatus: false
+      name: '', //'volver' //'collapse', // 'close'
+      //currentStatus: false
     }
     return settings
   }

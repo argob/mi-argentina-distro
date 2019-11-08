@@ -20,30 +20,6 @@ Template.base_layout.onRendered(() => {
   if (document.location.host !== 'mi.argentina.gob.ar') {
     $('#logo').attr('class', 'watermarked')
   }
-
-  try {
-    Tracker.autorun(function () {
-      Router.current()
-      try {
-        let paginaActual = window.sessionStorage.getItem('PaginaActual')
-        let rutaActual = Router.current().url.replace(Meteor.settings.public.miargentina, '')
-        if (_.indexOf(routes, rutaActual) < 0 && _.indexOf(routes, paginaActual) < 0) {
-          if (paginaActual === null) {
-            window.sessionStorage.setItem('PaginaActual', rutaActual)
-          } else {
-            if (paginaActual !== rutaActual) {
-              window.sessionStorage.setItem('PaginaAnterior', paginaActual)
-              window.sessionStorage.setItem('PaginaActual', rutaActual)
-            }
-          }
-        }
-      } catch (e) { }
-
-      Tracker.afterFlush(function () {
-        $(window).scrollTop(0)
-      })
-    })
-  } catch (e) {}
 })
 
 Template.tooltip.onRendered(() => {
