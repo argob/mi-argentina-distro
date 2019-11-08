@@ -15,11 +15,12 @@ Router.configure({
 Router.onBeforeAction(function () {
   if (!Meteor.loggingIn()) {
     if (!Meteor.userId()) {
+      window.sessionStorage.setItem('LoginAttempt', moment().format('DD/MM/YYYY HH:mm:ss'))
       Meteor.loginWithOIDC({ requestPermissions: ['profile', 'email', 'optional'] })
     }
   }
   this.next()
-}, { except: ['logout', 'expired'] })
+}, { except: ['logout', 'expired', 'fail'] })
 
 Router.route('/', {
   name: 'home',
@@ -71,6 +72,16 @@ Router.route('/sesion-cerrada', {
     this.render('logout')
   }
 })
+
+Router.route('/error', {
+  name: 'fail',
+  layoutTemplate: 'baseLayoutID',
+  action: function () {
+    document.title = 'Error | Mi Argentina'
+    this.render('fail')
+  }
+})
+
 
 Router.route('/inicio', function () {
   Router.go('/')

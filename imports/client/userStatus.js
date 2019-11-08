@@ -66,7 +66,7 @@ Tracker.autorun(() => {
 
     $(window).scrollTop(0)
 
-    let except=['salir','logout','expired'];
+    let except=['salir','logout','expired', 'fail'];
     if (except.indexOf(currentRoute.route.options.name) < 0) {
       let paginaActual = window.sessionStorage.getItem('PaginaActual')
       let currentPath = currentRoute.url.replace(Meteor.settings.public.miargentina, '')
@@ -81,5 +81,23 @@ Tracker.autorun(() => {
       }
     }
 
+  }
+})
+
+Accounts.onLoginFailure(function () {
+  let logginAttempt = JSON.stringify(window.sessionStorage.getItem('LoginAttempt'))
+  let lapse = moment().diff(moment(logginAttempt, 'DD/MM/YYYY HH:mm:ss'), 'seconds')
+  let attempt = JSON.parse(window.sessionStorage.getItem('attempt') ? window.sessionStorage.getItem('attempt') : 0)
+  if (attempt >= 1) {
+    window.sessionStorage.removeItem('attempt')
+    Session.set('status', 'fail')
+    Router.go('fail')
+  } else {
+    if (lapse < 20) {
+      attempt++
+      window.sessionStorage.setItem('attempt', attempt)
+    } else {
+      window.sessionStorage.removeItem('attempt')
+    }
   }
 })

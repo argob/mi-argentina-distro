@@ -16,7 +16,3 @@ Template.expired.helpers({
     return Session.get('status') === 'expired'
   }
 })
-
-Template.expired.onDestroyed(() => {
-  $('body').removeClass('class', 'sticky-footer')
-})

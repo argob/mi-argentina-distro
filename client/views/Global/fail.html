@@ -1,0 +1,14 @@
+<template name="fail">
+  {{#if status}}
+    <section class="well m-t-0">
+      <p class="text-muted text-center"><i class="fa fa-exclamation-circle fa-4x"></i></p>
+      <h2 class="text-center">Se produjo un error al ingresar a Mi Argentina</h2>
+      <p class="text-center">Por favor, esperá unos minutos e intentá de nuevo.</p>
+      <p class="text-center m-t-3">
+        <a href="#" class="btn btn-success login-button">VOLVER A INTENTAR</a>
+      </p>
+    </section>
+  {{else}}
+    {{> loading}}
+  {{/if}}
+</template>
