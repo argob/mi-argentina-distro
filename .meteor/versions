@@ -58,6 +58,7 @@ meteor-base@1.4.0
 meteorhacks:cluster@1.6.9
 miar:mailgun@0.0.1
 miar:moment-locale-es@0.0.1
+miar:sentry@0.0.1
 minifier-css@1.4.2
 minifier-js@2.4.1
 minimongo@1.4.5

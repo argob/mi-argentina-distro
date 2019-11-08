@@ -8,6 +8,7 @@ Template.fail.onRendered(() => {
   if (!Session.get('status')) {
     Router.go('/')
   }
+  $('body').append('<iframe src="' + Meteor.settings.public.id + '/salir" style="display:none"></iframe>')
 })
 
 Template.fail.helpers({

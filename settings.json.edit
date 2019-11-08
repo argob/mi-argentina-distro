@@ -8,6 +8,10 @@
     "key": "key",
     "domain": "domain"
   },
+  "sentry":{
+    "key": "key",
+    "domain": "domain"
+  },
   "oidc": {
     "authEndpoint": "http://project-id.gob.ar/authorize/",
     "tokenEndpoint": "http://project-id.gob.ar/token/",

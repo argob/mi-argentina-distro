@@ -19,6 +19,7 @@ ecmascript@0.12.4              # Enable ECMAScript2015+ syntax in app code
 # Local Packages
 miar:moment-locale-es
 miar:mailgun
+miar:sentry
 id:oidc-client
 
 # Athmosphere Packages
