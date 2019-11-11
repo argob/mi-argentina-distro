@@ -6,7 +6,8 @@
   },
   "mailgun":{
     "key": "key",
-    "domain": "domain"
+    "domain": "domain",
+    "from": "MiArgentina"
   },
   "sentry":{
     "key": "key",

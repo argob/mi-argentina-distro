@@ -1,7 +1,7 @@
 Meteor.methods({
   EnvioMailgun: function (contentEmail) {
     var data = {
-      "from": "Mi Argentina <contacto@mail.argentina.gob.ar>",
+      "from": Meteor.settings.mailgun.from,
       "to": contentEmail.email,
       "subject": contentEmail.subject,
       "text": "",
