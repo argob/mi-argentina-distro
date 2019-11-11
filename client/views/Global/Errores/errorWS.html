@@ -21,21 +21,3 @@
     </div>
   </li>
 </template>
-
-<template name="error_container">
-  <div class="panel panel-default panel-borders">
-    <div class="panel-body">
-      {{#if nombre}}
-        <h2>{{nombre}}</h2>
-      {{/if}}
-      <div class="media">
-        <div class="media-left">
-          <i class="fa fa-exclamation-triangle fa-fw fa-2x text-muted"></i>
-        </div>
-        <div class="media-body">
-          <p>El servicio <span class="text-danger">no se encuentra disponible en este momento</span>, intentá de nuevo más tarde.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
