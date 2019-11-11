@@ -1,9 +1,6 @@
 import { Meteor } from 'meteor/meteor'
-// import { HTTP } from 'meteor/http'
 import { _ } from 'meteor/underscore'
 import { moment } from 'meteor/momentjs:moment'
-// import { GlobalData } from '/lib/collection.js'
-// import { captureError } from '../../globalfunction.js'
 
 Meteor.methods({
   GetNextHoliday: function () {

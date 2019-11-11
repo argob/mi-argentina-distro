@@ -1,4 +1,7 @@
 import { Meteor } from 'meteor/meteor';
+import { Tokens } from '/lib/collection.js';
+
+export const globalInfo = Meteor.settings.globalInfo;
 
 Accounts.onLogin((user) => {
   if (user.type === 'oidc') {
@@ -15,4 +18,14 @@ Accounts.onLogin((user) => {
 })
 
 Meteor.startup(function () {
+
+  if (globalInfo.apiGateway.username) {
+    Tokens.remove({})
+
+    Meteor.call('UpdateTokens', function (error, result) {
+      if (error) {
+        console.log(error)
+      }
+    })
+  }
 })

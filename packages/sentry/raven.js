@@ -1,5 +1,5 @@
 var Raven = Npm.require('raven');
-Raven.config('https://' + Meteor.settings.mailgun.key + '@' + Meteor.settings.mailgun.domain + '/2', {
+Raven.config('https://' + Meteor.settings.sentry.key + '@' + Meteor.settings.sentry.domain + '/2', {
   environment: Meteor.settings.globalInfo.ambiente
 }).install();
 

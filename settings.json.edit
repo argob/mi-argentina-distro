@@ -23,10 +23,10 @@
   "globalInfo": {
     "ambiente": "AMBIENTE DE EJECUCION DEL PROYECTO",
     "apiGateway": {
-      "urlEndpoint": "http://181.209.76.233/api",
+      "urlEndpoint": "http://URL-API",
       "tokenEndpoint": "/auth/login",
-      "username": "SOLICITAR",
-      "password": "SOLICITAR",
+      "username": false,
+      "password": false
     }
   }
 }
