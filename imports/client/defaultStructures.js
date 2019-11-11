@@ -1,4 +1,4 @@
-export function StructurePanel () {
+export function StructureComponent () {
   return {
     id: '',
     size: 12,

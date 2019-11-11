@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 import { Session } from 'meteor/session'
 import { getHoliday } from './method'
-import { StructurePanel } from '/imports/client/defaultStructures'
+import { StructureComponent } from '/imports/client/defaultStructures'
 
 Template.inicio.onRendered(() => {
   getHoliday()
@@ -10,7 +10,7 @@ Template.inicio.onRendered(() => {
 
 Template.inicio.helpers({
   nextHoliday: function () {
-    let settings = new StructurePanel()
+    let settings = new StructureComponent()
     settings.id = 'nextHoliday'
     settings.status = Session.get('nextHoliday') && Session.get('nextHoliday').response ?'primary' : settings.status
     settings.size = 6

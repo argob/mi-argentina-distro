@@ -1,52 +1,34 @@
 <template name="alerta">
-  {{#if elementVisibility id=id element=element action=action}}
-    <div id={{id}} class="alert alert-{{style}} {{status}} alert {{#if close}}pclose{{/if}}">
-      <div class="{{#unless icono}}row{{/unless}}">
-        {{#unless icono}}
-          {{#if name}}
-            <div class="{{#if close}}col-xs-10 col-md-11{{else}}col-xs-12{{/if}}">
-              <h2 tabindex="{{tabindex}}" role="{{role}}">{{name}}</h2>
-            </div>
-          {{/if}}
-          {{#if close}}
-            <div class="col-xs-2 col-md-1">
-              <div class="text-right btn-close">
-                <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
-              </div>
-            </div>
-          {{/if}}
-        {{/unless}}
-        <div class="{{#unless icono}}col-xs-12{{/unless}}">
-          {{#if icono}}
-            <div class="media">
+  {{#with settings}}
+    {{#if visibility}}
+      <div class="col-lg-{{size}} panels-row-miargentina" id={{id}} aria-live="polite">
+        <div class="alert alert-{{status}} panel-border-{{border}} {{#if action}}pclose{{/if}}">
+          <div class="media">
+            {{#if icono}}
               <div class="media-left">
-                <i class="{{icono}}"></i>
+                <i class="fa {{icono}} fa-fw fa-{{sizeIcono}}x"></i>
               </div>
-              <div class="media-body">
-                <div class="row">
+            {{/if}}
+            <div class="media-body">
+              <div class="row">
+                <div class="{{#if action}}col-xs-10 col-md-11{{else}}col-lg-12{{/if}}">
                   {{#if name}}
-                    <div class="{{#if close}}col-xs-10 col-md-11{{else}}col-xs-12{{/if}}">
-                      <h2 tabindex="{{tabindex}}" role="{{role}}">{{name}}</h2>
-                    </div>
+                    <h4>{{name}}</h4>
                   {{/if}}
-                  {{#if close}}
-                    <div class="col-xs-2 col-md-1">
-                      <div class="text-right btn-close">
-                        <i class="fa fa-close" data-id="{{id}}" data-action="{{action}}"></i>
-                      </div>
-                    </div>
-                  {{/if}}
-                  <div class="col-xs-12">
-                    {{> Template.dynamic template=body}}
-                  </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla neque adipisci magni, sequi! Dolores voluptatibus tenetur, aut repellendus voluptate! Inventore sapiente a maxime eaque ad tenetur impedit, iure, quis beatae.</p>
                 </div>
+                {{#if action}}
+                  <div class="col-xs-2 col-md-1">
+                    <div class="text-right btn-close">
+                      <i class="fa fa-close" data-id={{id}}></i>
+                    </div>
+                  </div>
+                {{/if}}
               </div>
             </div>
-          {{else}}
-            {{> Template.dynamic template=body}}
-          {{/if}}
+          </div>
         </div>
       </div>
-    </div>
-  {{/if}}
+    {{/if}}
+  {{/with}}
 </template>

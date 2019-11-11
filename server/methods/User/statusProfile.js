@@ -45,7 +45,7 @@ Meteor.methods({
       })
 
       statusProfile.missing = statusProfile.missing + _.difference(profileKeys, _.keys(user.services.oidc)).length
-      statusProfile.percent = ((100 * (profileKeys.length - statusProfile.missing)) / profileKeys.length).toFixed(2)
+      statusProfile.percent = parseInt(((100 * (profileKeys.length - statusProfile.missing)) / profileKeys.length).toFixed(2))
 
       return statusProfile
     };

@@ -1,4 +1,4 @@
-import { StructurePanel } from '/imports/client/defaultStructures'
+import { StructureComponent } from '/imports/client/defaultStructures'
 import { getStatusProfile } from './method'
 
 Template.inicio.onRendered(()=> {
@@ -7,7 +7,7 @@ Template.inicio.onRendered(()=> {
 
 Template.inicio.helpers({
   estadoCuenta: function () {
-    let settings = new StructurePanel()
+    let settings = new StructureComponent()
     settings.id = 'estadoCuenta'
     settings.status = 'none'//Session.get('statusProfile') && Session.get('statusProfile').response ?'primary' : settings.status
     settings.name = 'Estado cuenta'
