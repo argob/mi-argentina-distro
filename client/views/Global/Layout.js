@@ -17,9 +17,10 @@ import '/public/css/watermarked.css'
 const routes = ['/', '/salir', '/sesion-cerrada', '/sesion-expirada']
 
 Template.base_layout.onRendered(() => {
-  if (document.location.host !== 'mi.argentina.gob.ar') {
-    $('#logo').attr('class', 'watermarked')
-  }
+  //AGREGAR LOGO DESARROLLO EN AMBIENTES NO PRODUCTIVOS
+  // if (document.location.host !== 'mi.argentina.gob.ar') {
+  //   $('#logo').attr('class', 'watermarked')
+  // }
 })
 
 Template.tooltip.onRendered(() => {
@@ -33,11 +34,6 @@ Template.base_layout.helpers({
 })
 
 Template.base_layout.events({
-  'keypress #TextoTramite': function (event) {
-    if (event.keyCode === 13) {
-      window.location.href = Meteor.settings.public.argentinagobar + '/buscar/' + encodeURI(encodeURI($('#TextoTramite')[0].value))
-    }
-  },
   'keypress .hash': function (event) {
     window.location.hash = 'mainContent'
     $(window).scrollTop(0)
