@@ -8,4 +8,5 @@ En esta documentación les detallaremos las secciones de proyecto, junto con alg
    :caption: Contents:
 
    sections/instalacion
+   sections/configuracion
 ..

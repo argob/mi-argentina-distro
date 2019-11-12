@@ -3,6 +3,12 @@
 Instalación
 ###########
 
+Dependencias y Requisitos
+=========================
+
+- **Tiene que estar conectado a ID**
+- **Solicitar CREDENCIALES de APIGateway**
+
 Instalación
 ===========
 
@@ -16,8 +22,3 @@ Instalación
    $ cd miargentina/
    $ meteor npm install
    $ cp settings.json.edit settings.json
-
-Dependencias
-============
-
-- ID
