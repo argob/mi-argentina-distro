@@ -1,7 +1,12 @@
 <img src="/public/img/logos/miargentina.png" alt="MiArgentina" width="400"/>
 
 ## Portal digital del Ciudadano.
-***
+---
+
+### Dependencias y Requisitos
+
+- ***Tiene que estar conectado a ID***
+- ***Solicitar CREDENCIALES de APIGateway***
 
 ### Instalar Meteor
 ```
@@ -16,11 +21,6 @@ $ cd miargentina/
 $ meteor npm install
 $ cp settings.json.edit settings.json
 ```
-
-### Dependencias y Requisitos
-
-- ***Tiene que estar conectado a ID***
-- ***Solicitar CREDENCIALES APIGAteway***
 
 ### Configurar los endpoints de ID
 

@@ -13,7 +13,7 @@ Template.inicio.helpers({
     settings.name = 'Ejemplo panel fijo'
     settings.service = {response: true}
     settings.bodyTemplate = 'staticPanel'
-    settings.footer = false
+    settings.footer = 'footerStaticPanel'
     settings.action = false
     return settings
   }

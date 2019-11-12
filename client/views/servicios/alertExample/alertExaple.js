@@ -11,7 +11,7 @@ Template.inicio.helpers({
     settings.status = 'info'
     settings.border = 'primary'
     settings.size = 12
-    settings.name = 'Ejemplo alerta'
+    settings.name = 'Título del alerta'
     settings.service = {response: true}
     settings.bodyTemplate = 'alertExample'
     settings.action = true
