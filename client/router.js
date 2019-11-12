@@ -34,15 +34,15 @@ Router.route('/', {
   }
 })
 
-Router.route('/seccion-generica', {
-  name: 'seccionGenerica',
+Router.route('/pais', {
+  name: 'pais',
   action: function () {
     if (this.ready()) {
-      this.render('seccionGenerica')
+      this.render('pais')
     } else {
       this.render('loading')
     };
-    document.title = 'Sección Genérica | Mi Argentina'
+    document.title = 'Pais | Mi Argentina'
   }
 })
 

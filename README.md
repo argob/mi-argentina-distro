@@ -11,7 +11,7 @@ curl https://install.meteor.com/ | sh
 ### Clonar el proyecto
 
 ```
-$ git clone https://gitlab.argentina.gob.ar/argentina/miargentina.git
+$ git clone git@git.argentina.gob.ar:open-source/mi-argentina.git
 $ cd miargentina/
 $ meteor npm install
 $ cp settings.json.edit settings.json

@@ -4,12 +4,12 @@ import { Session } from 'meteor/session'
 import { getProvincias, getLocalidades } from './method'
 import { StructureComponent } from '/imports/client/defaultStructures'
 
-Template.seccionGenerica.onRendered(() => {
+Template.pais.onRendered(() => {
   getProvincias()
   Session.set('localidades', {response: false})
 })
 
-Template.seccionGenerica.helpers({
+Template.pais.helpers({
   georefProvincias: function () {
     let settings = new StructureComponent()
     settings.id = 'provincias'

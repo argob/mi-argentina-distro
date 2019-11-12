@@ -2,22 +2,22 @@ import { Template } from 'meteor/templating'
 import { Meteor } from 'meteor/meteor'
 import { moment } from 'meteor/momentjs:moment'
 import { StructureTitle } from '/imports/client/defaultStructures'
-import './seccionGenerica.html'
+import './pais.html'
 
-Template.seccionGenerica.onRendered(() => {
+Template.pais.onRendered(() => {
   if (window.location.hash) {
     document.getElementById(window.location.hash.substring(1)).scrollIntoView()
   }
 })
 
-Template.seccionGenerica.helpers({
-  seccionGenerica: function () {
+Template.pais.helpers({
+  pais: function () {
     let settings = new StructureTitle()
-    settings.breadcrumb= [{path: 'seccion-generica', pathName: 'Sección genérica'}]
+    settings.breadcrumb= [{path: 'pais', pathName: 'Georef - Argentina'}]
     settings.classTitle= 'title-dashboard d-inline'
-    settings.title= 'Seccion Generica'
+    settings.title= 'Georef - Argentina'
     settings.complementoTitle= false //'<i class="fa icono-arg-validez-legal text-primary d-inline" alt="Identidad validada" title="Identidad validada"></i>'
-    settings.bajada= 'Subtitulo de ejemplo para la sección genérica'
+    settings.bajada= 'Servicio publico de Georef con listado de provincias y sus correspondientes localidades.'
     return settings
   }
 })
