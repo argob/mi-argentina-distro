@@ -10,3 +10,4 @@ fabfileSettings.py
 *~
 package-lock.json
 *.old.*
+docs/.build/
