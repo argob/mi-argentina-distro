@@ -3,12 +3,6 @@
 Instalación
 ###########
 
-Requisitos
-==========
-
-- Node
-- MongoDB ()
-
 Instalación
 ===========
 
@@ -18,7 +12,7 @@ Instalación
 
 - **Clonar proyecto**::
 
-   $ git clone git@git.argentina.gob.ar:open-source/mi-argentina.git
+   $ git clone https://github.com/argob/mi-argentina.git
    $ cd miargentina/
    $ meteor npm install
    $ cp settings.json.edit settings.json
