@@ -1,6 +1,15 @@
 <img src="/public/img/logos/miargentina.png" alt="MiArgentina" width="400"/>
 
 ## Portal digital del Ciudadano.
+Esta es una distribución pública de Mi Argentina, el portal digital del ciudadano desarrollado por la Subsecretaría de Gobierno Digital de la República Argentina en el periodo 2015-2019.
+
+La intención de esta distribución es la reutilización por parte de gobierno nacionales y subnacionales que deseen construir sus plataforma de servicios para ciudadanos. 
+
+Esta versión cuenta con las siguientes funcionalidades:
+* Dashboard Ciudadano
+* 
+
+
 ---
 
 ### Dependencias y Requisitos
