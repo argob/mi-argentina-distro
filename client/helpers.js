@@ -5,7 +5,7 @@ import { _ } from 'meteor/underscore'
 import { Router } from 'meteor/iron:router'
 import { moment } from 'meteor/momentjs:moment'
 import { StatusViews } from '/lib/collection.js'
-import './views/Global/Layout.html'
+import './views/global/Layout.html'
 
 Template.registerHelper('getSetting', function (nombre) {
   if (nombre === 'id') {
