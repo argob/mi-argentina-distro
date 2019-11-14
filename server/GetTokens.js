@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import { HTTP } from 'meteor/http'
 import { moment } from 'meteor/momentjs:moment'
 import { Tokens } from '/lib/collection.js'
-import { globalInfo } from './startup.js'
+import { settings } from './startup.js'
 import { captureError } from './globalfunction'
 
 const formatDate = 'DD/MM/YYYY HH:mm:ss'
@@ -19,10 +19,10 @@ export let tokenAPIGateway = function () {
   if (tokenAPIGateway === undefined || moment(tokenAPIGateway.update, formatDate) < moment()) {
     let now = moment().subtract(3, 'minutes').format(formatDate)
     try {
-      let data = (HTTP.post(globalInfo.apiGateway.urlEndpoint + globalInfo.apiGateway.tokenEndpoint, {params:
+      let data = (HTTP.post(settings.apiGateway.urlEndpoint + settings.apiGateway.tokenEndpoint, {params:
       {
-        'username': globalInfo.apiGateway.username,
-        'password': globalInfo.apiGateway.password
+        'username': settings.apiGateway.username,
+        'password': settings.apiGateway.password
       }})).data
       if (tokenAPIGateway !== undefined) {
         Tokens.update({'_id': tokenAPIGateway._id}, {$set:

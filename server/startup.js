@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Tokens } from '/lib/collection.js';
 
-export const globalInfo = Meteor.settings.globalInfo;
+export const settings = Meteor.settings;
 
 Accounts.onLogin((user) => {
   if (user.type === 'oidc') {
@@ -19,7 +19,7 @@ Accounts.onLogin((user) => {
 
 Meteor.startup(function () {
 
-  if (globalInfo.apiGateway.username) {
+  if (settings.apiGateway.username) {
     Tokens.remove({})
 
     Meteor.call('UpdateTokens', function (error, result) {

@@ -43,7 +43,7 @@ export let userLogout = function (type) {
       break
     case 'idLogout':
       if (JSON.parse(window.sessionStorage.getItem('login'))) {
-        url = Meteor.settings.public.id + '/salir/?next=' + Meteor.settings.public.miargentina + '/' //+ window.sessionStorage.getItem('PaginaActual')
+        url = Meteor.settings.public.id + '/salir/?next=' + Meteor.settings.public.miargentina + window.sessionStorage.getItem('PaginaActual')
       }
       break
   }

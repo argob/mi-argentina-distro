@@ -1,6 +1,6 @@
 var Raven = Npm.require('raven');
 Raven.config('https://' + Meteor.settings.sentry.key + '@' + Meteor.settings.sentry.domain + '/2', {
-  environment: Meteor.settings.globalInfo.ambiente
+  environment: Meteor.settings.webApp.ambiente
 }).install();
 
 Sentry = {

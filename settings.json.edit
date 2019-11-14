@@ -20,13 +20,23 @@
     "clientId": "your-client-id",
     "secret": "your-secret-id"
   },
-  "globalInfo": {
+  "apiGateway": {
+    "urlEndpoint": "http://URL-API",
+    "tokenEndpoint": "/auth/login",
+    "username": false,
+    "password": false
+  },
+  "miArgentina": {
     "ambiente": "AMBIENTE DE EJECUCION DEL PROYECTO",
-    "apiGateway": {
-      "urlEndpoint": "http://URL-API",
-      "tokenEndpoint": "/auth/login",
-      "username": false,
-      "password": false
+    "session": {
+      "expire": {
+        "time": 50,
+        "attr": "minutes"
+      },
+      "revoke": {
+        "time": 5,
+        "attr": "hours"
+      }
     }
   }
 }
