@@ -1,4 +1,4 @@
 .. _metodos:
 
-Metodos
+Métodos
 #######

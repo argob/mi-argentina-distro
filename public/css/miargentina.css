@@ -480,11 +480,6 @@ a.btn-collapse i.collapseGira {
 	background-color: #ffffff !important;
 }
 
-.nav.navbar-nav.navbar-header a img {
-	margin: 0 auto;
-	width: 100%;
-}
-
 .navbar-right .dropdown-micuenta {
 	right: 3px;
 	width: 275px;
@@ -1910,7 +1905,7 @@ input[type="radio"]:checked + label{
 .cont-radio-list{}
 .radio-list{
 	position: relative;
-	margin-bottom: 10px;
+	margin-bottom: 10px; 
 }
 .radio-list input{
 	position: absolute;
@@ -1929,19 +1924,19 @@ input[type="radio"]:checked + label{
 }
 
 /* .markerCSS .leaflet-popup-content-wrapper {
-  background: #2ce897;
-  color: #eee;
-  font-size: 12px;
-  line-height: 24px;
-  border-radius: 0px;
+	background: #2ce897;
+	color: #eee;
+	font-size: 12px;
+	line-height: 24px;
+	border-radius: 0px;
 }
 
 .markerCSS .leaflet-popup-content-wrapper a {
-  color: rgba(200, 200, 200, 0.1);
+	color: rgba(200, 200, 200, 0.1);
 } */
 
 .markerCSS .leaflet-popup-content {
-  width: 400px;
+	width: 400px;
 }
 
 .markerCSS .leaflet-popup-tip-container {
@@ -1950,7 +1945,11 @@ input[type="radio"]:checked + label{
 
 .markerCSScluster {
 	text-align: center;
-	background-image: url('/img/m1.png');
+	/*background-image: url('/img/m1.png');*/
+	background-color: #0072bb;
+	border-radius: 100px;
+	border: solid 5px #4994cb;
+	line-height: 10px;
 }
 
 .textCluster {
@@ -1961,3 +1960,211 @@ input[type="radio"]:checked + label{
 .leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated {
 	will-change:auto !important;
 }
+
+
+.circle-number {
+	display: inline-flex;
+	background: #0072BB;
+	color: #fff;
+	padding: 0.6rem;
+	border-radius: 50%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+	padding-top: 0;
+	padding-bottom: 0;
+  }
+  section.row.well {
+	padding-left: 0;
+	padding-right: 0;
+	
+  }
+  
+  .nav.navbar-nav.navbar-header a img{
+  margin: 0 auto;
+  width: 100%;
+  }
+  
+  /* adaptar boton mi cuenta navegacion desktop */
+  
+  @media screen and (min-width: 768px) {
+  .btn.btn-link.dropdown-toggle {
+  font-size: 16px;
+  margin-right: 16px;
+  }
+  /* margen izquierdo  */
+  .btn.btn-link.dropdown-toggle span{
+  margin-left: 1rem;
+  }
+  
+  /* otra solucion miargentina.css eliminar max-width: 260px; line 505*/
+  .dashboard-sidebar{
+  max-width: 290px !important;
+  }
+  /* borde azul a sidebar item active */
+  .dashboard-sidebar ul li.active > a {
+  border-left: 6px solid #0072bb !important;
+  }
+  
+  /* terminos y condiciones espaciado interno y alineado a la derecha */
+  .footer .first-footer-item {
+  padding: 0.6rem;
+  text-align: right;
+  }
+  
+  
+  }
+  /* adaptar boton mi cuenta navegacion mobile */
+  @media screen and (max-width: 490px) {
+  .navbar.navbar-top .navbar-nav>.btn {
+	  margin-top: 0 !important;
+  }
+  .btn.btn-link.dropdown-toggle {
+  font-size: 11px;
+  margin-right: 10px;
+  
+  }
+  
+  header .btn {
+  padding-left: 10px;
+  padding-right: 10px;
+  }
+  /* imagen mi-argentina tiene un vertical-align: top; otra solucion media.less eliminar esa line 46*/
+  .nav .media .media-body {
+  vertical-align: middle !important;
+  }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/* Login y registro nuevo v5 */
+
+body.id-v5 h1 {
+	font-size: 22px;
+}
+body.id-v5 h2 {
+	font-size: 18px;
+}
+body.id-v5 p {
+    font-size: 16px;
+}
+body.id-v5 .alert p {
+    font-size: 14px;
+}
+body.id-v5 .help-block {
+    font-size: 14px;
+}
+body.id-v5 hr {
+    margin: 20px 0;
+}
+body.id-v5 .well {
+    margin: 0;
+}
+body.id-v5 .navbar {
+	min-height: auto;
+	margin: 0;
+	border: 0;
+    text-align: center;
+}
+body.id-v5 .navbar-nav {
+	margin: 20px 0;
+	float: none !important;
+}
+body.id-v5 .nav.navbar-nav img {
+    width: 90%;
+}
+
+
+
+
+@media (max-width: 991px) {
+    body.id-v5 main {
+        margin: 0 -20px;
+	}
+	body.id-v5 .navbar img {
+		width: 90%;
+	}
+}
+
+
+
+
+
+
+
+body.id-v5 .form-group {
+    margin-bottom: 20px;
+}
+
+
+body.id-v5 .login-contrasena {
+    font-size: 12px;
+    margin: 10px 0;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+body.id-v5 .float-right {
+    float: right;
+}
+body.id-v5 .float-left {
+    float: left;
+}
+
+body.id-v5 .label-tyc {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+body.id-v5 .circle-number {
+    padding: 8px 13px;
+    width: 35px;
+    height: 35px;
+    margin: 0 10px 20px 0;
+    float: left;
+}
+body.id-v5 .circle-heading {
+    margin-top: 7px;
+}
+body.id-v5 .fa-check-circle {
+    float: left;
+    margin: 0 5px 40px 0;
+}
+
+body.id-v5 .help-block {
+    margin-top: -5px !important;
+    margin-bottom: 10px !important;
+}
+
+
+body.id-v5 label {
+	margin-bottom: 10px !important;
+}
+
+
+

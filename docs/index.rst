@@ -1,7 +1,7 @@
-Bienvenido a la documentación de Mi Argentina
+Documentación de Mi Argentina
 ==============================================
 
-En esta documentación les detallaremos las secciones del proyecto, junto con algunas funcionalidades básicas para su desarrollo e implementación.
+En esta documentación detallamos las secciones del proyecto junto con algunas funcionalidades básicas para su desarrollo e implementación.
 
 .. toctree::
    :maxdepth: 3
@@ -9,20 +9,14 @@ En esta documentación les detallaremos las secciones del proyecto, junto con al
 
    sections/proyecto/introduccion
    sections/proyecto/tecnologia
+   sections/proyecto/estructura
+   sections/proyecto/templates
+   sections/proyecto/metodos
 ..
 
 .. toctree::
    :maxdepth: 3
-   :caption: Guia de uso:
-
-   sections/guia/estructura
-   sections/guia/templates
-   sections/guia/metodos
-..
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Ambiente desarrollo:
+   :caption: Ambiente de desarrollo:
 
    sections/desarrollo/instalacion
    sections/desarrollo/configuracion

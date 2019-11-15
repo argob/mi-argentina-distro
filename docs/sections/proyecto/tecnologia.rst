@@ -6,7 +6,7 @@ Tecnología
 Plataforma
 ==========
 
-| Este proyecto esta desarrollado en JavaScritp utilizando *Meteor* como plataforma.
+| El proyecto está desarrollado en JavaScritp utilizando *Meteor* como plataforma.
 | La arquitectura de Meteor cuenta con 2 capas:
 
   1. **Frontend (Blaze - Mini Mongo)**
@@ -14,7 +14,7 @@ Plataforma
 
 .. image:: ../../images/MeteorArchitecture.png
 
-| Para mas informacion consultar la documentacion oficial:
+| Para más información consultar la documentación oficial:
 
   - `Meteor <https://docs.meteor.com/>`_
   - `Blaze <http://blazejs.org/>`_
@@ -29,7 +29,7 @@ HTML y CSS
 Herramientas
 ============
 
-| Algunas de las librerias / herramientas utilizadas en el proyecto son:
+| Algunas de las librerías / herramientas utilizadas en el proyecto son:
 
   - `IronRouter <http://iron-meteor.github.io/iron-router/>`_ para el manejo de rutas y flujos.
   - `MomentJs <https://momentjs.com/docs/>`_ para el manejo de fechas y horas.

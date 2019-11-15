@@ -7,7 +7,7 @@ Configurar settings.json
 ========================
 
 | **1) Configurar OpenId 'oidc'**.
-| Configurar los Endpoints correspondientes segun el ambiente donde se este desarrollando.
+| Configurar los Endpoints correspondientes según el ambiente donde se esté desarrollando.
 | Para este paso es muy importante haber completado la configuracion del entorno de ID.
 
 - oidc::
@@ -21,7 +21,7 @@ Configurar settings.json
     }
 
 | **2) Configurar 'public'**.
-| Esto es para uso interno de la aplicacion, para lograr un correcto flujo de rutas.
+| Esta configuración es de uso interno de la aplicación para lograr un correcto flujo de rutas.
 
 - public::
 
@@ -30,25 +30,41 @@ Configurar settings.json
       "miargentina": "http://project-mi-argentina.gob.ar",
     }
 
-| **3) Configurar 'globalInfo'**.
-| Setear el ambiente q corresponda: 'LOCAL' / 'QA' / 'PROD'.
-| Configurar los Endpoints de APIGateway junto con las credenciales correspondientes.
+| **3) Configurar 'webApp'**.
+| Setear el ambiente que corresponda: 'LOCAL' / 'QA' / 'PROD'.
 
-- globalInfo::
+- webApp::
 
     {
       "ambiente": "AMBIENTE DE EJECUCION DEL PROYECTO",
-      "apiGateway": {
-        "urlEndpoint": "http://URL-API",
-        "tokenEndpoint": "/auth/login",
-        "username": false,
-        "password": false
+      "session": {
+        "expire": {
+          "time": 50,
+          "attr": "minutes"
+        },
+        "revoke": {
+          "time": 5,
+          "attr": "hours"
+        }
       }
     }
 
-| **4) Configurar 'mailgun' y 'sentry'** *(Opcional)*
-| Estas aplicaciones son opcionales, mailgun es para envio de mails y sentry para reporte de errores.
-| En caso de utilizar alguna herramienta de terceros hay que hacerlo de la siguiente manera:
+| **4) Configurar 'apiGateway'**.
+| Configurar los Endpoints de APIGateway junto con las credenciales correspondientes.
+
+- apiGateway::
+
+    {
+      "urlEndpoint": "http://URL-API",
+      "tokenEndpoint": "/auth/login",
+      "username": false,
+      "password": false
+    }
+
+| **5) Configurar 'mailgun' y 'sentry'** *(Opcional)*
+| Estas aplicaciones son opcionales. Mailgun es para envío de mails y Sentry para reporte de errores.
+
+| En caso de utilizar alguna otra herramienta de terceros hay que hacerlo de la misma manera:
 
 - mailgun::
 
