@@ -26,7 +26,7 @@
     "username": false,
     "password": false
   },
-  "miArgentina": {
+  "webApp": {
     "ambiente": "AMBIENTE DE EJECUCION DEL PROYECTO",
     "session": {
       "expire": {

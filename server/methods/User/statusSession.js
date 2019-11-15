@@ -34,7 +34,7 @@ Meteor.methods({
 
 
       _.each(user.services.resume.loginTokens, function (element) {
-        if (moment(element.when, 'ddd MMM DD YYYY HH:mm:ss [GMT-0300 (ART)]').add(revoke.time, revoke.attr) < moment()) {
+        if (moment(element.when, 'ddd MMM DD YYYY HH:mm:ss [GMT-0300 (ART)]').add(expire.time, expire.attr) < moment()) {
           if (element.hashedToken !== currentConnection.hashedToken) {
             Meteor.users.update({'_id': user._id}, {$pull: {
               'services.resume.loginTokens': {'hashedToken': element.hashedToken}
