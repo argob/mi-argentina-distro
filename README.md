@@ -7,10 +7,14 @@ La intención de esta distribución es la reutilización por parte de gobierno n
 
 Esta versión cuenta con las siguientes funcionalidades:
 * Dashboard Ciudadano
-* 
-
-
----
+* Configuracion de visualización
+* Cliente OpenID
+* Google Analytics
+* Conexión con APIGateway
+* Conexion con sender de mails
+* Conexion para tracking de errores
+* Templates y ejemplos
+* Documentación
 
 ### Dependencias y Requisitos
 

@@ -27,7 +27,7 @@ Meteor.methods({
       let expire = settings.webApp.session.expire
       let validationAttr = ['seconds', 'minutes', 'hours']
 
-      if (!revoke || isNaN(revoke.time) || validationAttr.indexOf(revoke.attr) || !expire || isNaN(expire.time) || validationAttr.indexOf(expire.attr)) {
+      if (!revoke || isNaN(revoke.time) || validationAttr.indexOf(revoke.attr) < 0 || !expire || isNaN(expire.time) || validationAttr.indexOf(expire.attr) < 0 ) {
         console.log("SETTING ERROR")
         throw new Meteor.Error('setting error')
       }
